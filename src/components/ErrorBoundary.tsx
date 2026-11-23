@@ -41,7 +41,7 @@ export default class ErrorBoundary extends React.Component<
               onClick={() => {
                 this.setState({ hasError: false, errorMessage: '' });
               }}
-              className="w-full min-h-[46px] px-4 py-2.5 rounded-xl bg-[#319447] text-white text-sm font-bold cursor-pointer"
+              className="w-full min-h-[46px] px-4 py-2.5 rounded-xl bg-[#0074CC] text-white text-sm font-bold cursor-pointer"
             >
               화면 다시 시도
             </button>
