@@ -215,9 +215,10 @@ export default function App() {
       GS25: { main: '#0074CC', hover: '#005BA1', text: '#FFFFFF' },
       CU: { main: '#752F8A', hover: '#5B226C', text: '#FFFFFF' },
       SEVEN: { main: '#F37021', hover: '#D45B12', text: '#FFFFFF' },
+      SEVEN_ELEVEN: { main: '#F37021', hover: '#D45B12', text: '#FFFFFF' },
+      '7ELEVEN': { main: '#F37021', hover: '#D45B12', text: '#FFFFFF' },
+      '7-ELEVEN': { main: '#F37021', hover: '#D45B12', text: '#FFFFFF' },
       EMART24: { main: '#FFB81C', hover: '#E09E0B', text: '#252525' },
-    };
-    const t = themeMap[activeBrand] || themeMap.GS25;
 
     let styleEl = document.getElementById('dynamic-brand-theme');
     if (!styleEl) {
