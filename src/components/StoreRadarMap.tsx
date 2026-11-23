@@ -44,10 +44,10 @@ export default function StoreRadarMap({
     <div className="rounded-2xl border border-[#EAE0CC] bg-[#FAF6EB] overflow-hidden">
       <div className="px-4 py-2.5 border-b border-[#EAE0CC] bg-white flex flex-wrap items-center justify-between gap-2 text-xs">
         <div className="flex items-center gap-1.5 text-[#4B453A] font-medium min-w-0">
-          <Navigation className="w-3.5 h-3.5 text-[#319447] shrink-0" />
+          <Navigation className="w-3.5 h-3.5 text-[#0074CC] shrink-0" />
           <span className="truncate max-w-[180px] sm:max-w-xs">{locationLabel}</span>
           <span aria-hidden="true">·</span>
-          <span className="font-num font-semibold text-[#319447] shrink-0">
+          <span className="font-num font-semibold text-[#0074CC] shrink-0">
             반경 {formatDistance(radiusMeters)}
           </span>
         </div>
@@ -78,7 +78,7 @@ export default function StoreRadarMap({
             cy="50%"
             r="38%"
             fill="rgba(49, 148, 71, 0.06)"
-            stroke="#319447"
+            stroke="#0074CC"
             strokeWidth="1.5"
             strokeDasharray="5 4"
           />
@@ -87,7 +87,7 @@ export default function StoreRadarMap({
             cy="50%"
             r="19%"
             fill="none"
-            stroke="#319447"
+            stroke="#0074CC"
             strokeOpacity="0.35"
             strokeWidth="1"
           />
@@ -120,7 +120,7 @@ export default function StoreRadarMap({
               <div
                 className={`min-w-[36px] min-h-[36px] px-2 py-1 rounded-xl flex items-center gap-1 text-[11px] font-bold shadow-sm transition-transform ${
                   isSelected
-                    ? 'bg-[#319447] text-white scale-110 ring-2 ring-white'
+                    ? 'bg-[#0074CC] text-white scale-110 ring-2 ring-white'
                     : 'bg-white text-[#252525] border border-[#D8CEBA] hover:scale-105'
                 }`}
               >
