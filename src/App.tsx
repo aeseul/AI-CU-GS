@@ -232,6 +232,10 @@ export default function App() {
       .hover\\:bg-\\[\\#257336\\]:hover, .hover\\:bg-\\[\\#005BA1\\]:hover { background-color: ${t.hover} !important; }
       .text-\\[\\#319447\\], .text-\\[\\#0074CC\\] { color: ${t.main} !important; }
       .border-\\[\\#319447\\], .border-\\[\\#0074CC\\] { border-color: ${t.main} !important; }
+      [fill="#0074CC"], [fill="#319447"], [fill="#16A34A"], [fill="#2563EB"] { fill: ${t.main} !important; }
+      [stroke="#0074CC"], [stroke="#319447"], [stroke="#16A34A"], [stroke="#2563EB"] { stroke: ${t.main} !important; }
+      svg text[fill="#FFFFFF"] { fill: ${t.text} !important; }
+      .bg-emerald-600, .bg-green-600, .bg-blue-600 { background-color: ${t.main} !important; color: ${t.text} !important; }
     `;
   }, [brandFilter, selectedStore?.brand]);
 
