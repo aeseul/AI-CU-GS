@@ -177,7 +177,7 @@ export default function CookingVideoGuide({
             onClick={() => setAutoAdvance((prev) => !prev)}
             className={`min-h-[32px] px-2.5 py-1 rounded-lg text-[11px] font-bold whitespace-nowrap cursor-pointer transition-colors border ${
               autoAdvance
-                ? 'bg-[#319447] border-[#3FA956] text-white'
+                ? 'bg-[#0074CC] border-[#3FA956] text-white'
                 : 'bg-[#253029] border-[#3A483F] text-[#CFC8BA] hover:text-white'
             }`}
           >
@@ -207,7 +207,7 @@ export default function CookingVideoGuide({
         {/* Synchronized Caption & Quick Player Controls */}
         <div className="p-3.5 sm:p-4 bg-[#18201B] border-t border-[#2B362E] space-y-3">
           <div className="flex items-start gap-3">
-            <div className="w-7 h-7 rounded-lg bg-[#319447] text-white font-num font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">
+            <div className="w-7 h-7 rounded-lg bg-[#0074CC] text-white font-num font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">
               {currentStep.step}
             </div>
             <div className="min-w-0 flex-1 space-y-1">
@@ -242,7 +242,7 @@ export default function CookingVideoGuide({
               <button
                 type="button"
                 onClick={handleTogglePlay}
-                className="min-h-[38px] px-3.5 py-1.5 rounded-xl bg-[#319447] hover:bg-[#287D3B] text-xs font-bold text-white inline-flex items-center gap-1.5 whitespace-nowrap cursor-pointer"
+                className="min-h-[38px] px-3.5 py-1.5 rounded-xl bg-[#0074CC] hover:bg-[#287D3B] text-xs font-bold text-white inline-flex items-center gap-1.5 whitespace-nowrap cursor-pointer"
               >
                 {isPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
                 <span>{isPlaying ? '일시정지' : '영상 재생'}</span>
@@ -319,7 +319,7 @@ export default function CookingVideoGuide({
             href={youtubeSearchUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[11px] font-bold text-[#319447] hover:underline inline-flex items-center gap-1 whitespace-nowrap"
+            className="text-[11px] font-bold text-[#0074CC] hover:underline inline-flex items-center gap-1 whitespace-nowrap"
           >
             <span>유튜브 레시피 더보기</span>
             <ExternalLink className="w-3 h-3" />
@@ -337,14 +337,14 @@ export default function CookingVideoGuide({
                   onClick={() => selectStep(idx, true)}
                   className={`w-full p-3 rounded-2xl border text-left flex items-center gap-3 transition-colors cursor-pointer ${
                     isActive
-                      ? 'bg-[#F2FBF4] border-[#319447] shadow-xs'
+                      ? 'bg-[#F2FBF4] border-[#0074CC] shadow-xs'
                       : 'bg-[#FFFDF9] border-[#EAE0CC] hover:border-[#CBBFA8]'
                   }`}
                 >
                   <div
                     className={`w-7 h-7 rounded-lg font-num font-bold text-xs flex items-center justify-center shrink-0 ${
                       isActive
-                        ? 'bg-[#319447] text-white'
+                        ? 'bg-[#0074CC] text-white'
                         : isDone
                           ? 'bg-[#DFF3E3] text-[#226631]'
                           : 'bg-[#EFE5D2] text-[#5C5549]'
@@ -381,7 +381,7 @@ export default function CookingVideoGuide({
                   <span
                     className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 ${
                       isActive
-                        ? 'bg-[#319447] text-white'
+                        ? 'bg-[#0074CC] text-white'
                         : 'bg-[#F4EEE1] text-[#5C5549]'
                     }`}
                     aria-hidden="true"
