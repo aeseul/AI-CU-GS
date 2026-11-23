@@ -40,7 +40,7 @@ export default function BottomNav({
               type="button"
               onClick={() => onSelectTab(item.id)}
               className={`relative min-h-[48px] flex flex-col items-center justify-center gap-1 transition-colors cursor-pointer ${
-                isActive ? 'text-[#319447]' : 'text-[#756D60] hover:text-[#252525]'
+                isActive ? 'text-[#0074CC]' : 'text-[#756D60] hover:text-[#252525]'
               }`}
             >
               <div className="relative">
@@ -53,7 +53,7 @@ export default function BottomNav({
               </div>
               <span
                 className={`text-[11px] whitespace-nowrap ${
-                  isActive ? 'font-bold text-[#319447]' : 'font-medium'
+                  isActive ? 'font-bold text-[#0074CC]' : 'font-medium'
                 }`}
               >
                 {item.label}
