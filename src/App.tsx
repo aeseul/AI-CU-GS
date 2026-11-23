@@ -659,7 +659,7 @@ export default function App() {
     return (
       <div className="min-h-screen bg-[#FFF9EF] text-[#252525] flex items-center justify-center p-6">
         <div className="text-center space-y-2">
-          <div className="w-10 h-10 rounded-xl bg-[#319447] text-white flex items-center justify-center mx-auto">
+          <div className="w-10 h-10 rounded-xl bg-[#0074CC]] text-white flex items-center justify-center mx-auto">
             <UtensilsCrossed className="w-5 h-5" />
           </div>
           <p className="text-sm font-semibold text-[#5C5549]">로그인 상태 확인 중...</p>
@@ -693,7 +693,7 @@ export default function App() {
             }}
             className="flex items-center gap-2 text-left cursor-pointer min-w-0"
           >
-            <div className="w-8 h-8 rounded-lg bg-[#319447] text-white flex items-center justify-center shrink-0">
+            <div className="w-8 h-8 rounded-lg bg-[#0074CC]] text-white flex items-center justify-center shrink-0">
               <UtensilsCrossed className="w-4 h-4" />
             </div>
             <span className="text-xs sm:text-base font-extrabold tracking-tight text-[#252525] truncate">
