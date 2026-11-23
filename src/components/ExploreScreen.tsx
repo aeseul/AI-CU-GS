@@ -108,7 +108,7 @@ export default function ExploreScreen({
       {/* Header & Top Switcher */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
         <div className="min-w-0">
-          <p className="text-xs font-semibold text-[#319447]">매장 · 행사 · 재고 확인 원칙 준수</p>
+          <p className="text-xs font-semibold text-[#0074CC]">매장 · 행사 · 재고 확인 원칙 준수</p>
           <h1 className="text-xl sm:text-2xl font-extrabold text-[#252525]">주변 매장 및 행사 탐색</h1>
         </div>
 
@@ -120,7 +120,7 @@ export default function ExploreScreen({
               section === 'stores' ? 'bg-white text-[#252525] shadow-xs' : 'text-[#6B6355]'
             }`}
           >
-            <MapPin className="w-4 h-4 text-[#319447]" />
+            <MapPin className="w-4 h-4 text-[#0074CC]" />
             <span>주변 매장</span>
           </button>
           <button
@@ -149,7 +149,7 @@ export default function ExploreScreen({
                     onClick={() => onChangeRadius(r)}
                     className={`min-h-[40px] px-3 py-1.5 rounded-xl text-xs font-bold font-num cursor-pointer ${
                       radiusMeters === r
-                        ? 'bg-[#319447] text-white'
+                        ? 'bg-[#0074CC] text-white'
                         : 'bg-[#F5EFE0] text-[#554E43]'
                     }`}
                   >
@@ -244,7 +244,7 @@ export default function ExploreScreen({
                     <div
                       key={store.storeId}
                       className={`bg-white border rounded-2xl p-4 space-y-3 ${
-                        isSelected ? 'border-[#319447] bg-[#F5FBF6]' : 'border-[#EAE0CC]'
+                        isSelected ? 'border-[#0074CC] bg-[#F5FBF6]' : 'border-[#EAE0CC]'
                       }`}
                     >
                       <div className="flex items-start justify-between gap-3">
@@ -282,7 +282,7 @@ export default function ExploreScreen({
                             onClick={() => onSelectStore(store)}
                             className={`flex-1 sm:flex-none min-h-[40px] px-3.5 py-1.5 rounded-xl text-xs font-bold cursor-pointer whitespace-nowrap ${
                               isSelected
-                                ? 'bg-[#319447] text-white'
+                                ? 'bg-[#0074CC] text-white'
                                 : 'bg-[#FAF4E6] text-[#252525] hover:bg-[#EFE5D2]'
                             }`}
                           >
