@@ -200,7 +200,7 @@ export default function LoginScreen({ onEnterPreview }: LoginScreenProps) {
       <div className="w-full border-b border-[#E8DEC8] bg-[#FFFDF8]">
         <div className="max-w-6xl mx-auto px-3.5 sm:px-6 py-2 sm:py-2.5 flex items-center justify-between gap-2 sm:gap-4 text-[11px] sm:text-xs text-[#595246]">
           <div className="flex items-center gap-1.5 sm:gap-2 min-w-0">
-            <Info className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#319447] shrink-0" />
+            <Info className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#0074CC] shrink-0" />
             <span className="truncate">
               <span className="sm:hidden">Firebase Auth · Firestore 연결됨</span>
               <span className="hidden sm:inline">
@@ -211,7 +211,7 @@ export default function LoginScreen({ onEnterPreview }: LoginScreenProps) {
           <button
             type="button"
             onClick={() => setShowFirebaseGuide((prev) => !prev)}
-            className="text-[#319447] font-semibold hover:underline whitespace-nowrap shrink-0 cursor-pointer"
+            className="text-[#0074CC] font-semibold hover:underline whitespace-nowrap shrink-0 cursor-pointer"
           >
             <span>{showFirebaseGuide ? '닫기' : '연결 안내'}</span>
           </button>
@@ -225,7 +225,7 @@ export default function LoginScreen({ onEnterPreview }: LoginScreenProps) {
               href={`https://console.firebase.google.com/project/${firebaseProjectId}/authentication/providers`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block font-semibold text-[#319447] underline"
+              className="inline-block font-semibold text-[#0074CC] underline"
             >
               Firebase Console Sign-in method 바로가기
             </a>
@@ -236,14 +236,14 @@ export default function LoginScreen({ onEnterPreview }: LoginScreenProps) {
       {/* Compact Smartphone Brand Header (shows immediately above login on mobile) */}
       <div className="md:hidden max-w-6xl w-full mx-auto px-3.5 pt-4 pb-1 flex items-center justify-between gap-2">
         <div className="flex items-center gap-2.5 min-w-0">
-          <div className="w-9 h-9 rounded-xl bg-[#319447] text-white flex items-center justify-center shrink-0">
+          <div className="w-9 h-9 rounded-xl bg-[#0074CC] text-white flex items-center justify-center shrink-0">
             <UtensilsCrossed className="w-4 h-4" />
           </div>
           <div className="min-w-0">
             <h1 className="text-sm font-extrabold tracking-tight text-[#252525] truncate">
               AI 편의점 꿀조합 큐레이터
             </h1>
-            <p className="text-[11px] font-semibold text-[#319447] truncate">
+            <p className="text-[11px] font-semibold text-[#0074CC] truncate">
               5,000원으로 즐기는 최고의 한 끼
             </p>
           </div>
@@ -256,11 +256,11 @@ export default function LoginScreen({ onEnterPreview }: LoginScreenProps) {
         <section className="order-2 md:order-1 md:col-span-5 lg:col-span-6 flex flex-col justify-between bg-white border border-[#EAE0CC] rounded-3xl overflow-hidden shadow-sm">
           <div className="p-5 sm:p-6 lg:p-8 space-y-4">
             <div className="hidden md:flex items-center gap-2.5">
-              <div className="w-10 h-10 rounded-xl bg-[#319447] text-white flex items-center justify-center shrink-0">
+              <div className="w-10 h-10 rounded-xl bg-[#0074CC] text-white flex items-center justify-center shrink-0">
                 <UtensilsCrossed className="w-5 h-5" />
               </div>
               <div className="min-w-0">
-                <p className="text-xs font-semibold text-[#319447]">GS25 우선 지원 · 1차 MVP</p>
+                <p className="text-xs font-semibold text-[#0074CC]">GS25 우선 지원 · 1차 MVP</p>
                 <h1 className="text-lg font-extrabold tracking-tight text-[#252525] truncate">
                   AI 편의점 꿀조합 큐레이터
                 </h1>
@@ -280,7 +280,7 @@ export default function LoginScreen({ onEnterPreview }: LoginScreenProps) {
 
             <div className="pt-1 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-1 lg:grid-cols-3 gap-2.5 text-xs text-[#453F36] break-keep">
               <div className="bg-[#FFFDF8] border border-[#EAE0CC] rounded-xl p-3.5 space-y-1.5">
-                <p className="font-bold text-[#319447] flex items-center gap-1.5">
+                <p className="font-bold text-[#0074CC] flex items-center gap-1.5">
                   <ShieldCheck className="w-3.5 h-3.5 shrink-0" />
                   <span>예산 100% 준수</span>
                 </p>
@@ -551,7 +551,7 @@ export default function LoginScreen({ onEnterPreview }: LoginScreenProps) {
                     feedback.type === 'error'
                       ? 'bg-red-50 border-red-200 text-red-800'
                       : feedback.type === 'success'
-                        ? 'bg-[#F2FBF4] border-[#319447]/40 text-[#226631]'
+                        ? 'bg-[#F2FBF4] border-[#0074CC]/40 text-[#226631]'
                         : 'bg-[#FFF7E8] border-[#F49A24]/40 text-[#66410B]'
                   }`}
                 >
@@ -582,7 +582,7 @@ export default function LoginScreen({ onEnterPreview }: LoginScreenProps) {
           {/* Primary Preview Mode CTA */}
           <div className="mt-6 pt-6 border-t border-[#EFE5D2] space-y-3">
             <div className="flex items-start gap-2 text-xs text-[#5B5449]">
-              <CheckCircle2 className="w-4 h-4 text-[#319447] shrink-0 mt-0.5" />
+              <CheckCircle2 className="w-4 h-4 text-[#0074CC] shrink-0 mt-0.5" />
               <span>
                 로그인 없이도 비회원 체험 모드로 위치 탐색, 5,000원 예산 검증, Gemini AI 꿀조합 추천을 바로 테스트할 수 있습니다.
               </span>
@@ -590,7 +590,7 @@ export default function LoginScreen({ onEnterPreview }: LoginScreenProps) {
             <button
               type="button"
               onClick={() => onEnterPreview(nickname.trim() || undefined)}
-              className="w-full min-h-[52px] px-5 py-3.5 rounded-xl bg-[#319447] hover:bg-[#257336] text-white text-base font-bold flex items-center justify-center gap-2 shadow-sm transition-colors cursor-pointer"
+              className="w-full min-h-[52px] px-5 py-3.5 rounded-xl bg-[#0074CC] hover:bg-[#257336] text-white text-base font-bold flex items-center justify-center gap-2 shadow-sm transition-colors cursor-pointer"
             >
               <Sparkles className="w-5 h-5" />
               <span>비회원 체험 모드로 시작하기</span>
