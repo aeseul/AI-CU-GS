@@ -47,7 +47,7 @@ export default function RecommendationsScreen({
     return (
       <div className="max-w-4xl mx-auto px-3.5 sm:px-6 pt-6 sm:pt-8 pb-24 sm:pb-28">
         <div className="bg-white border border-[#EAE0CC] rounded-3xl p-6 sm:p-8 text-center space-y-4">
-          <Sparkles className="w-8 h-8 text-[#319447] mx-auto" />
+          <Sparkles className="w-8 h-8 text-[#0074CC] mx-auto" />
           <h2 className="text-xl font-bold text-[#252525]">아직 추천을 실행하지 않았습니다</h2>
           <p className="text-sm text-[#6B6355]">
             홈 화면에서 주변 GS25 매장과 예산, 맛 테마를 선택한 뒤 「AI 꿀조합 추천받기」를 눌러 주세요.
@@ -55,7 +55,7 @@ export default function RecommendationsScreen({
           <button
             type="button"
             onClick={onBackToHome}
-            className="min-h-[46px] px-6 py-2.5 rounded-xl bg-[#319447] text-white text-sm font-bold cursor-pointer"
+            className="min-h-[46px] px-6 py-2.5 rounded-xl bg-[#0074CC] text-white text-sm font-bold cursor-pointer"
           >
             조건 설정하러 가기
           </button>
@@ -92,7 +92,7 @@ export default function RecommendationsScreen({
       {lastRequest && (
         <section className="bg-white border border-[#EAE0CC] rounded-2xl p-4 sm:p-5 space-y-2">
           <div className="flex flex-wrap items-center gap-2 text-xs text-[#6B6355]">
-            <span className="font-bold text-[#319447]">
+            <span className="font-bold text-[#0074CC]">
               {BRAND_METADATA[lastRequest.brand].label}
             </span>
             <span aria-hidden="true">·</span>
@@ -157,7 +157,7 @@ export default function RecommendationsScreen({
             <button
               type="button"
               onClick={onRetry}
-              className="min-h-[44px] px-4 py-2 rounded-xl bg-[#319447] text-white text-xs font-bold cursor-pointer"
+              className="min-h-[44px] px-4 py-2 rounded-xl bg-[#0074CC] text-white text-xs font-bold cursor-pointer"
             >
               AI 추천 다시 시도
             </button>
@@ -185,7 +185,7 @@ export default function RecommendationsScreen({
       {!isLoading && response && response.recommendations.length > 0 && (
         <div className="space-y-4">
           <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-[#5C5549]">
-            <div className="flex items-center gap-1.5 font-semibold text-[#319447]">
+            <div className="flex items-center gap-1.5 font-semibold text-[#0074CC]">
               <ShieldCheck className="w-4 h-4" />
               <span>
                 서버 코드 가격·예산 검증 완료 ({response.recommendations.length}개 조합)
@@ -310,7 +310,7 @@ export default function RecommendationsScreen({
                           <span className="text-[#6B6355]">
                             남은 예산 (설정 {formatKRW(combo.budget)})
                           </span>
-                          <span className="font-bold font-num text-[#319447]">
+                          <span className="font-bold font-num text-[#0074CC]">
                             {formatKRW(combo.remainingBudget)} 남음
                           </span>
                         </div>
@@ -328,7 +328,7 @@ export default function RecommendationsScreen({
                           <strong className="text-[#252525]">추천 이유:</strong> {combo.reason}
                         </p>
                         <div className="flex flex-wrap items-center gap-2 text-[#6B6355] pt-0.5">
-                          <Clock className="w-3.5 h-3.5 text-[#319447] shrink-0" />
+                          <Clock className="w-3.5 h-3.5 text-[#0074CC] shrink-0" />
                           <span>약 {combo.estimatedCookingMinutes}분</span>
                           <span aria-hidden="true">·</span>
                           <span>
@@ -345,7 +345,7 @@ export default function RecommendationsScreen({
                     <button
                       type="button"
                       onClick={() => onSelectRecipe(combo)}
-                      className="w-full min-h-[46px] px-4 py-2.5 rounded-xl bg-[#319447] hover:bg-[#257336] text-white text-sm font-bold flex items-center justify-center gap-2 transition-colors cursor-pointer"
+                      className="w-full min-h-[46px] px-4 py-2.5 rounded-xl bg-[#0074CC] hover:bg-[#257336] text-white text-sm font-bold flex items-center justify-center gap-2 transition-colors cursor-pointer"
                     >
                       <Utensils className="w-4 h-4 shrink-0" />
                       <span>상세 레시피 · 구매 체크리스트</span>
