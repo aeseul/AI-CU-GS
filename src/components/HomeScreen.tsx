@@ -165,7 +165,7 @@ export default function HomeScreen({
       {/* Hero Compact Header */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 sm:gap-3">
         <div className="min-w-0">
-          <p className="text-xs font-semibold text-[#319447]">5,000원의 선택을 더 쉽고, 맛있게</p>
+          <p className="text-xs font-semibold text-[#0074CC]">5,000원의 선택을 더 쉽고, 맛있게</p>
           <h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight text-[#252525]">
             오늘의 편의점 꿀조합 찾기
           </h1>
@@ -180,7 +180,7 @@ export default function HomeScreen({
         <section className="md:col-span-6 bg-white border border-[#EAE0CC] rounded-3xl p-4 sm:p-5 lg:p-6 shadow-sm space-y-4 sm:space-y-5">
           <div className="flex items-center justify-between gap-2">
             <div className="flex items-center gap-2">
-              <MapPin className="w-5 h-5 text-[#319447]" />
+              <MapPin className="w-5 h-5 text-[#0074CC]" />
               <h2 className="text-lg font-bold text-[#252525]">1. 위치 및 편의점 선택</h2>
             </div>
             <span className="text-xs font-medium text-[#756D60]">기본 반경 100m</span>
@@ -192,7 +192,7 @@ export default function HomeScreen({
               type="button"
               onClick={onRequestGps}
               disabled={gpsStatus === 'loading'}
-              className="w-full min-h-[48px] px-4 py-3 rounded-xl bg-[#319447] hover:bg-[#257336] disabled:opacity-60 text-white text-sm font-bold flex items-center justify-center gap-2 transition-colors cursor-pointer"
+              className="w-full min-h-[48px] px-4 py-3 rounded-xl bg-[#0074CC] hover:bg-[#257336] disabled:opacity-60 text-white text-sm font-bold flex items-center justify-center gap-2 transition-colors cursor-pointer"
             >
               <Crosshair className="w-4 h-4" />
               <span>
@@ -215,7 +215,7 @@ export default function HomeScreen({
                   <button
                     type="button"
                     onClick={onRequestGps}
-                    className="mt-1.5 font-bold underline text-[#319447] cursor-pointer"
+                    className="mt-1.5 font-bold underline text-[#0074CC] cursor-pointer"
                   >
                     위치 권한 다시 시도
                   </button>
@@ -286,7 +286,7 @@ export default function HomeScreen({
                     onClick={() => onChangeRadius(r)}
                     className={`min-h-[40px] rounded-lg text-xs font-bold font-num transition-colors cursor-pointer ${
                       radiusMeters === r
-                        ? 'bg-white text-[#319447] shadow-xs'
+                        ? 'bg-white text-[#0074CC] shadow-xs'
                         : 'text-[#6A6256] hover:text-[#252525]'
                     }`}
                   >
@@ -304,7 +304,7 @@ export default function HomeScreen({
                   onClick={() => onChangeBrandFilter('ALL')}
                   className={`min-h-[40px] px-3 py-1.5 rounded-xl text-xs font-bold transition-colors cursor-pointer ${
                     brandFilter === 'ALL'
-                      ? 'bg-[#319447] text-white'
+                      ? 'bg-[#0074CC] text-white'
                       : 'bg-[#F5EFE0] text-[#554E43] hover:bg-[#EAE0CC]'
                   }`}
                 >
@@ -317,7 +317,7 @@ export default function HomeScreen({
                     onClick={() => onChangeBrandFilter(b)}
                     className={`min-h-[40px] px-3 py-1.5 rounded-xl text-xs font-bold transition-colors cursor-pointer whitespace-nowrap ${
                       brandFilter === b
-                        ? 'bg-[#319447] text-white'
+                        ? 'bg-[#0074CC] text-white'
                         : 'bg-[#F5EFE0] text-[#554E43] hover:bg-[#EAE0CC]'
                     }`}
                   >
@@ -388,7 +388,7 @@ export default function HomeScreen({
                             onChangeRadius(nextRadius);
                             onSelectStore(store);
                           }}
-                          className="w-full px-3 py-2 rounded-xl border border-[#E6DAC2] bg-white hover:border-[#319447] flex items-center justify-between gap-2 text-xs cursor-pointer"
+                          className="w-full px-3 py-2 rounded-xl border border-[#E6DAC2] bg-white hover:border-[#0074CC] flex items-center justify-between gap-2 text-xs cursor-pointer"
                         >
                           <span className="font-bold text-[#252525] truncate">
                             {BRAND_METADATA[store.brand].label} · {store.name}
@@ -419,7 +419,7 @@ export default function HomeScreen({
                         key={r}
                         type="button"
                         onClick={() => onChangeRadius(r)}
-                        className="min-h-[40px] px-3.5 py-2 rounded-xl bg-[#319447] text-white text-xs font-bold cursor-pointer"
+                        className="min-h-[40px] px-3.5 py-2 rounded-xl bg-[#0074CC] text-white text-xs font-bold cursor-pointer"
                       >
                         {formatDistance(r)}로 반경 넓히기
                       </button>
@@ -461,7 +461,7 @@ export default function HomeScreen({
                       </div>
                       <div className="shrink-0 flex items-center pt-1">
                         {isSelected ? (
-                          <span className="inline-flex items-center gap-1 text-xs font-bold text-[#319447]">
+                          <span className="inline-flex items-center gap-1 text-xs font-bold text-[#0074CC]">
                             <Check className="w-4 h-4" /> 선택됨
                           </span>
                         ) : (
@@ -494,7 +494,7 @@ export default function HomeScreen({
           <div className="bg-white border border-[#EAE0CC] rounded-3xl p-4 sm:p-5 lg:p-6 shadow-sm space-y-4 sm:space-y-5">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-[#F0E7D6]">
               <div className="flex items-center gap-2.5 min-w-0">
-                <StoreIcon className="w-5 h-5 text-[#319447] shrink-0" />
+                <StoreIcon className="w-5 h-5 text-[#0074CC] shrink-0" />
                 <div className="min-w-0">
                   <p className="text-xs text-[#6B6355]">추천 기준 매장</p>
                   <p className="text-sm font-bold text-[#252525] truncate">
@@ -542,7 +542,7 @@ export default function HomeScreen({
                       onClick={() => onChangeBudgetInput(String(amt))}
                       className={`min-h-[44px] rounded-xl text-sm font-bold font-num border transition-colors cursor-pointer ${
                         active
-                          ? 'bg-[#319447] border-[#319447] text-white'
+                          ? 'bg-[#0074CC] border-[#0074CC] text-white'
                           : 'bg-[#FFFDF9] border-[#DDD2BE] text-[#252525] hover:bg-[#FAF4E6]'
                       }`}
                     >
@@ -641,7 +641,7 @@ export default function HomeScreen({
                       onClick={() => onTogglePreference(pref)}
                       className={`min-h-[42px] px-3.5 py-2 rounded-xl text-xs font-semibold border transition-colors cursor-pointer ${
                         active
-                          ? 'bg-[#F2FBF4] border-[#319447] text-[#226631] font-bold'
+                          ? 'bg-[#F2FBF4] border-[#0074CC] text-[#226631] font-bold'
                           : 'bg-white border-[#DDD2BE] text-[#5C5549] hover:bg-[#FAF5EA]'
                       }`}
                     >
@@ -671,7 +671,7 @@ export default function HomeScreen({
               type="button"
               onClick={handleSubmit}
               disabled={isGenerating}
-              className="w-full min-h-[54px] px-5 py-3.5 rounded-2xl bg-[#319447] hover:bg-[#257336] disabled:opacity-60 text-white text-base font-extrabold flex items-center justify-center gap-2 shadow-sm transition-colors cursor-pointer"
+              className="w-full min-h-[54px] px-5 py-3.5 rounded-2xl bg-[#0074CC] hover:bg-[#257336] disabled:opacity-60 text-white text-base font-extrabold flex items-center justify-center gap-2 shadow-sm transition-colors cursor-pointer"
             >
               <Sparkles className="w-5 h-5" />
               <span>{isGenerating ? 'AI가 예산 내 꿀조합을 찾는 중...' : 'AI 꿀조합 추천받기'}</span>
