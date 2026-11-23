@@ -219,7 +219,8 @@ export default function App() {
       '7ELEVEN': { main: '#F37021', hover: '#D45B12', text: '#FFFFFF' },
       '7-ELEVEN': { main: '#F37021', hover: '#D45B12', text: '#FFFFFF' },
       EMART24: { main: '#FFB81C', hover: '#E09E0B', text: '#252525' },
-
+};
+    const t = themeMap[activeBrand] || { main: '#F37021', hover: '#D45B12', text: '#FFFFFF' };
     let styleEl = document.getElementById('dynamic-brand-theme');
     if (!styleEl) {
       styleEl = document.createElement('style');
