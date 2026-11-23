@@ -124,7 +124,7 @@ export default function WoodongsLinkCard({
           >
             {copiedLabel === 'search' ? (
               <>
-                <Check className="w-3.5 h-3.5 text-[#319447]" />
+                <Check className="w-3.5 h-3.5 text-[#0074CC]" />
                 <span>재고검색용 복사됨</span>
               </>
             ) : (
