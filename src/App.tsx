@@ -209,6 +209,29 @@ export default function App() {
     const preferredGs25 = nearbyStores.find((s) => s.brand === 'GS25');
     return preferredGs25 ?? nearbyStores[0];
   }, [nearbyStores, selectedStoreId]);
+  useEffect(() => {
+    const activeBrand = brandFilter === 'ALL' ? (selectedStore?.brand ?? 'GS25') : brandFilter;
+    const themeMap: Record<string, { main: string; hover: string; text: string }> = {
+      GS25: { main: '#0074CC', hover: '#005BA1', text: '#FFFFFF' },
+      CU: { main: '#752F8A', hover: '#5B226C', text: '#FFFFFF' },
+      SEVEN: { main: '#F37021', hover: '#D45B12', text: '#FFFFFF' },
+      EMART24: { main: '#FFB81C', hover: '#E09E0B', text: '#252525' },
+    };
+    const t = themeMap[activeBrand] || themeMap.GS25;
+
+    let styleEl = document.getElementById('dynamic-brand-theme');
+    if (!styleEl) {
+      styleEl = document.createElement('style');
+      styleEl.id = 'dynamic-brand-theme';
+      document.head.appendChild(styleEl);
+    }
+    styleEl.textContent = `
+      .bg-\\[\\#319447\\], .bg-\\[\\#0074CC\\] { background-color: ${t.main} !important; color: ${t.text} !important; }
+      .hover\\:bg-\\[\\#257336\\]:hover, .hover\\:bg-\\[\\#005BA1\\]:hover { background-color: ${t.hover} !important; }
+      .text-\\[\\#319447\\], .text-\\[\\#0074CC\\] { color: ${t.main} !important; }
+      .border-\\[\\#319447\\], .border-\\[\\#0074CC\\] { border-color: ${t.main} !important; }
+    `;
+  }, [brandFilter, selectedStore?.brand]);
 
   // Fetch real nearby convenience stores whenever center coordinates or GPS trigger settle
   useEffect(() => {
