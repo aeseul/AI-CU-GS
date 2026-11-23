@@ -238,7 +238,42 @@ export default function App() {
       .bg-emerald-600, .bg-green-600, .bg-blue-600 { background-color: ${t.main} !important; color: ${t.text} !important; }
     `;
   }, [brandFilter, selectedStore?.brand]);
+useEffect(() => {
+    const handleStoreClick = (e: MouseEvent) => {
+      const target = e.target as Element | null;
+      const svg = target?.closest('svg');
+      if (!svg || !svg.querySelector('rect, polygon, path')) return;
 
+      // 캐릭터 요소 찾기 (모자·얼굴·몸통이 모여 있는 그룹 또는 이미지)
+      const groups = Array.from(svg.querySelectorAll('g'));
+      const charEl =
+        (svg.querySelector('[data-character], .character, #character') as SVGGraphicsElement | null) ||
+        (groups.find((g) => g.querySelectorAll('circle').length >= 1 && g.getBBox().width < 90 && g.getBBox().height < 120) as SVGGraphicsElement | undefined);
+      if (!charEl) return;
+
+      const pt = svg.createSVGPoint();
+      pt.x = e.clientX;
+      pt.y = e.clientY;
+      const ctm = svg.getScreenCTM();
+      if (!ctm) return;
+      const cursor = pt.matrixTransform(ctm.inverse());
+
+      const box = charEl.getBBox();
+      const baseTransform = charEl.getAttribute('data-base-transform') ?? (charEl.getAttribute('transform') || '');
+      if (!charEl.hasAttribute('data-base-transform')) {
+        charEl.setAttribute('data-base-transform', baseTransform);
+      }
+
+      const dx = cursor.x - (box.x + box.width / 2);
+      const dy = cursor.y - (box.y + box.height * 0.85);
+      charEl.style.transition = 'transform 0.45s cubic-bezier(0.22, 1, 0.36, 1)';
+      charEl.setAttribute('transform', `translate(${dx.toFixed(1)}, ${dy.toFixed(1)}) ${baseTransform}`.trim());
+    };
+
+    document.addEventListener('click', handleStoreClick);
+    return () => document.removeEventListener('click', handleStoreClick);
+  }, []);
+  
   // Fetch real nearby convenience stores whenever center coordinates or GPS trigger settle
   useEffect(() => {
     if (gpsStatus === 'loading') return;
