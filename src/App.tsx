@@ -239,39 +239,78 @@ export default function App() {
     `;
   }, [brandFilter, selectedStore?.brand]);
 useEffect(() => {
-    const handleStoreClick = (e: MouseEvent) => {
-      const target = e.target as Element | null;
-      const svg = target?.closest('svg');
-      if (!svg || !svg.querySelector('rect, polygon, path')) return;
-
-      // 캐릭터 요소 찾기 (모자·얼굴·몸통이 모여 있는 그룹 또는 이미지)
-      const groups = Array.from(svg.querySelectorAll('g'));
-      const charEl =
-        (svg.querySelector('[data-character], .character, #character') as SVGGraphicsElement | null) ||
-        (groups.find((g) => g.querySelectorAll('circle').length >= 1 && g.getBBox().width < 90 && g.getBBox().height < 120) as SVGGraphicsElement | undefined);
-      if (!charEl) return;
-
-      const pt = svg.createSVGPoint();
-      pt.x = e.clientX;
-      pt.y = e.clientY;
-      const ctm = svg.getScreenCTM();
-      if (!ctm) return;
-      const cursor = pt.matrixTransform(ctm.inverse());
-
-      const box = charEl.getBBox();
-      const baseTransform = charEl.getAttribute('data-base-transform') ?? (charEl.getAttribute('transform') || '');
-      if (!charEl.hasAttribute('data-base-transform')) {
-        charEl.setAttribute('data-base-transform', baseTransform);
-      }
-
-      const dx = cursor.x - (box.x + box.width / 2);
-      const dy = cursor.y - (box.y + box.height * 0.85);
-      charEl.style.transition = 'transform 0.45s cubic-bezier(0.22, 1, 0.36, 1)';
-      charEl.setAttribute('transform', `translate(${dx.toFixed(1)}, ${dy.toFixed(1)}) ${baseTransform}`.trim());
+    const cornerCoords: Record<string, { x: number; y: number }> = {
+      '라면/간편식': { x: 220, y: 240 },
+      '라면·간편식': { x: 220, y: 240 },
+      '냉장고': { x: 310, y: 165 },
+      '음료 냉장고': { x: 310, y: 165 },
+      '유제품/계란': { x: 430, y: 145 },
+      '유제품·계란': { x: 430, y: 145 },
+      '행사 코너': { x: 600, y: 175 },
+      '1+1 행사': { x: 600, y: 175 },
+      '중앙 진열대': { x: 470, y: 265 },
+      '조리 코너': { x: 710, y: 255 },
+      '전자레인지·온수': { x: 710, y: 255 },
+      '바구니': { x: 470, y: 380 },
+      '내 바구니': { x: 470, y: 380 },
+      '계산대': { x: 660, y: 355 },
     };
 
-    document.addEventListener('click', handleStoreClick);
-    return () => document.removeEventListener('click', handleStoreClick);
+    const moveCharacter = (targetX: number, targetY: number) => {
+      const svgs = Array.from(document.querySelectorAll('svg'));
+      const storeSvg = svgs.find((s) => (s.textContent || '').includes('음료 냉장고') || (s.textContent || '').includes('계산대'));
+      if (!storeSvg) return;
+
+      const groups = Array.from(storeSvg.querySelectorAll('g')) as SVGGraphicsElement[];
+      const charEl =
+        (storeSvg.querySelector('[data-character], .character, #character') as SVGGraphicsElement | null) ||
+        groups.find((g) => {
+          const b = g.getBBox();
+          return g.querySelectorAll('circle').length >= 1 && b.width > 15 && b.width < 85 && b.height > 25 && b.height < 110;
+        });
+      if (!charEl) return;
+
+      if (!charEl.hasAttribute('data-orig-x')) {
+        const b = charEl.getBBox();
+        charEl.setAttribute('data-orig-x', String(b.x + b.width / 2));
+        charEl.setAttribute('data-orig-y', String(b.y + b.height * 0.85));
+        charEl.setAttribute('data-orig-tf', charEl.getAttribute('transform') || '');
+      }
+
+      const ox = Number(charEl.getAttribute('data-orig-x'));
+      const oy = Number(charEl.getAttribute('data-orig-y'));
+      const origTf = charEl.getAttribute('data-orig-tf') || '';
+
+      charEl.style.transition = 'transform 0.45s cubic-bezier(0.22, 1, 0.36, 1)';
+      charEl.setAttribute('transform', `translate(${(targetX - ox).toFixed(1)}, ${(targetY - oy).toFixed(1)}) ${origTf}`.trim());
+    };
+
+    const handleGlobalClick = (e: MouseEvent) => {
+      const target = e.target as Element | null;
+      if (!target) return;
+
+      const btnText = (target.closest('button')?.textContent || target.textContent || '').trim();
+      for (const [label, pos] of Object.entries(cornerCoords)) {
+        if (btnText === label || btnText.startsWith(label)) {
+          setTimeout(() => moveCharacter(pos.x, pos.y), 30);
+          return;
+        }
+      }
+
+      const svg = target.closest('svg');
+      if (svg && ((svg.textContent || '').includes('음료 냉장고') || (svg.textContent || '').includes('계산대'))) {
+        const pt = svg.createSVGPoint();
+        pt.x = e.clientX;
+        pt.y = e.clientY;
+        const ctm = svg.getScreenCTM();
+        if (!ctm) return;
+        const cursor = pt.matrixTransform(ctm.inverse());
+        setTimeout(() => moveCharacter(cursor.x, cursor.y), 30);
+      }
+    };
+
+    document.addEventListener('click', handleGlobalClick, true);
+    return () => document.removeEventListener('click', handleGlobalClick, true);
   }, []);
   
   // Fetch real nearby convenience stores whenever center coordinates or GPS trigger settle
