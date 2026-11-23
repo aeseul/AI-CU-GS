@@ -125,7 +125,7 @@ export default function MyPageScreen({
         <div className="space-y-1 min-w-0">
           {firebaseUser ? (
             <>
-              <div className="flex items-center gap-1.5 text-xs font-semibold text-[#319447]">
+              <div className="flex items-center gap-1.5 text-xs font-semibold text-[#0074CC]">
                 <CheckCircle2 className="w-4 h-4 shrink-0" />
                 <span>
                   Firebase 로그인됨 · Cloud Firestore 동기화 활성
@@ -187,7 +187,7 @@ export default function MyPageScreen({
         <section className="bg-white border border-[#EAE0CC] rounded-3xl p-5 sm:p-6 shadow-sm space-y-4">
           <div className="flex items-center justify-between gap-2">
             <div className="flex items-center gap-2">
-              <UserCog className="w-5 h-5 text-[#319447]" />
+              <UserCog className="w-5 h-5 text-[#0074CC]" />
               <div>
                 <h2 className="text-base font-bold text-[#252525]">
                   내 회원 정보 (본인 전용 Cloud Firestore 문서)
@@ -213,7 +213,7 @@ export default function MyPageScreen({
                 maxLength={40}
                 value={nicknameInput}
                 onChange={(e) => setNicknameInput(e.target.value)}
-                className="w-full min-h-[44px] px-3.5 py-2 rounded-xl border border-[#DDD2BE] bg-[#FFFDF9] text-sm text-[#252525] focus:outline-none focus:ring-2 focus:ring-[#319447]"
+                className="w-full min-h-[44px] px-3.5 py-2 rounded-xl border border-[#DDD2BE] bg-[#FFFDF9] text-sm text-[#252525] focus:outline-none focus:ring-2 focus:ring-[#0074CC]"
               />
             </div>
 
@@ -228,7 +228,7 @@ export default function MyPageScreen({
                 id="profile-brand"
                 value={preferredBrandInput}
                 onChange={(e) => setPreferredBrandInput(e.target.value as BrandId)}
-                className="w-full min-h-[44px] px-3.5 py-2 rounded-xl border border-[#DDD2BE] bg-[#FFFDF9] text-sm text-[#252525] focus:outline-none focus:ring-2 focus:ring-[#319447]"
+                className="w-full min-h-[44px] px-3.5 py-2 rounded-xl border border-[#DDD2BE] bg-[#FFFDF9] text-sm text-[#252525] focus:outline-none focus:ring-2 focus:ring-[#0074CC]"
               >
                 {BRAND_OPTIONS.map((opt) => (
                   <option key={opt.value} value={opt.value}>
@@ -253,7 +253,7 @@ export default function MyPageScreen({
                 step={500}
                 value={budgetInput}
                 onChange={(e) => setBudgetInput(e.target.value)}
-                className="w-full min-h-[44px] px-3.5 py-2 rounded-xl border border-[#DDD2BE] bg-[#FFFDF9] text-sm font-num text-[#252525] focus:outline-none focus:ring-2 focus:ring-[#319447]"
+                className="w-full min-h-[44px] px-3.5 py-2 rounded-xl border border-[#DDD2BE] bg-[#FFFDF9] text-sm font-num text-[#252525] focus:outline-none focus:ring-2 focus:ring-[#0074CC]"
               />
             </div>
 
@@ -261,7 +261,7 @@ export default function MyPageScreen({
               {profileMessage ? (
                 <p
                   className={`text-xs font-semibold ${
-                    profileMessage.type === 'success' ? 'text-[#319447]' : 'text-red-700'
+                    profileMessage.type === 'success' ? 'text-[#0074CC]' : 'text-red-700'
                   }`}
                 >
                   {profileMessage.text}
@@ -275,7 +275,7 @@ export default function MyPageScreen({
               <button
                 type="submit"
                 disabled={isSavingProfile}
-                className="min-h-[42px] px-4 py-2 rounded-xl bg-[#319447] hover:bg-[#257336] disabled:opacity-60 text-white text-xs font-bold inline-flex items-center gap-1.5 cursor-pointer"
+                className="min-h-[42px] px-4 py-2 rounded-xl bg-[#0074CC] hover:bg-[#257336] disabled:opacity-60 text-white text-xs font-bold inline-flex items-center gap-1.5 cursor-pointer"
               >
                 <Save className="w-4 h-4" />
                 <span>{isSavingProfile ? '저장 중...' : '내 정보 저장'}</span>
@@ -290,7 +290,7 @@ export default function MyPageScreen({
         <h2 className="text-base font-bold text-[#252525]">외부 서비스 연동 현황</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
           <div className="p-3.5 rounded-2xl bg-[#F2FBF4] border border-[#B7DEC0] space-y-1">
-            <div className="flex items-center gap-1.5 font-bold text-[#319447]">
+            <div className="flex items-center gap-1.5 font-bold text-[#0074CC]">
               <Database className="w-4 h-4" />
               <span>Firebase Auth & Firestore</span>
             </div>
@@ -308,7 +308,7 @@ export default function MyPageScreen({
             </p>
           </div>
           <div className="p-3.5 rounded-2xl bg-[#F2FBF4] border border-[#B7DEC0] space-y-1">
-            <div className="flex items-center gap-1.5 font-bold text-[#319447]">
+            <div className="flex items-center gap-1.5 font-bold text-[#0074CC]">
               <ShieldCheck className="w-4 h-4" />
               <span>Gemini AI & 예산 검증 엔진</span>
             </div>
@@ -322,7 +322,7 @@ export default function MyPageScreen({
       {/* Favorites */}
       <section className="space-y-3">
         <div className="flex items-center gap-2">
-          <Bookmark className="w-5 h-5 text-[#319447]" />
+          <Bookmark className="w-5 h-5 text-[#0074CC]" />
           <h2 className="text-lg font-bold text-[#252525]">저장한 꿀조합 ({favorites.length})</h2>
         </div>
 
@@ -393,13 +393,13 @@ export default function MyPageScreen({
                 key={item.id}
                 type="button"
                 onClick={() => onOpenRecipe(item)}
-                className="w-full text-left bg-white border border-[#EAE0CC] hover:border-[#319447] rounded-2xl p-4 flex items-center justify-between gap-3 cursor-pointer"
+                className="w-full text-left bg-white border border-[#EAE0CC] hover:border-[#0074CC] rounded-2xl p-4 flex items-center justify-between gap-3 cursor-pointer"
               >
                 <div className="min-w-0">
                   <p className="text-sm font-bold text-[#252525] truncate">{item.title}</p>
                   <p className="text-xs text-[#6B6355] truncate">{item.description}</p>
                 </div>
-                <span className="font-num text-sm font-extrabold text-[#319447] shrink-0">
+                <span className="font-num text-sm font-extrabold text-[#0074CC] shrink-0">
                   {formatKRW(item.totalPrice)}
                 </span>
               </button>
