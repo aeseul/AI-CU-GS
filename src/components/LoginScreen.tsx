@@ -316,7 +316,7 @@ export default function LoginScreen({ onEnterPreview }: LoginScreenProps) {
             <img
               src={resolveAssetPath('/assets/aistudio/image_596359bd.png')}
               alt="GS25 공식 로고"
-              className="h-16 sm:h-20 lg:h-24 w-auto object-contain select-none"
+              className="h-16 sm:h-20 lg:h-24 w-auto object-contain select-none animate-pulse"
             />
             <div className="space-y-1 break-keep">
               <p className="text-xs sm:text-sm font-bold text-[#0074CC]">
