@@ -200,9 +200,9 @@ export default function RecipeChecklistScreen({
             className="min-h-[44px] px-4 py-2 rounded-xl border border-[#DDD2BE] bg-white hover:bg-[#FAF5EA] text-xs font-bold text-[#252525] inline-flex items-center gap-1.5 whitespace-nowrap shrink-0 cursor-pointer transition-colors"
           >
             {shareFeedback?.type === 'success' ? (
-              <Check className="w-4 h-4 text-[#319447]" />
+              <Check className="w-4 h-4 text-[#0074CC]" />
             ) : (
-              <Share2 className="w-4 h-4 text-[#319447]" />
+              <Share2 className="w-4 h-4 text-[#0074CC]" />
             )}
             <span>공유하기</span>
           </button>
@@ -227,7 +227,7 @@ export default function RecipeChecklistScreen({
           role="status"
           className={`px-4 py-3 rounded-2xl text-xs font-semibold border ${
             shareFeedback.type === 'success'
-              ? 'bg-[#F2FBF4] border-[#319447]/40 text-[#226631]'
+              ? 'bg-[#F2FBF4] border-[#0074CC]/40 text-[#226631]'
               : 'bg-red-50 border-red-200 text-red-700'
           }`}
         >
@@ -239,7 +239,7 @@ export default function RecipeChecklistScreen({
       <header className="bg-white border border-[#EAE0CC] rounded-3xl p-5 sm:p-6 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div className="space-y-1">
           <div className="flex flex-wrap items-center gap-2 text-xs text-[#6B6355]">
-            <span className="font-bold text-[#319447]">3분 레시피 · 구매 체크리스트</span>
+            <span className="font-bold text-[#0074CC]">3분 레시피 · 구매 체크리스트</span>
             <span aria-hidden="true">·</span>
             <span>샘플 데이터 기준</span>
           </div>
@@ -258,7 +258,7 @@ export default function RecipeChecklistScreen({
             <p className="text-[#756D60] mb-0.5">남은 잔액</p>
             <p
               className={`font-num font-extrabold text-base ${
-                summary.isOverBudget ? 'text-red-600' : 'text-[#319447]'
+                summary.isOverBudget ? 'text-red-600' : 'text-[#0074CC]'
               }`}
             >
               {summary.isOverBudget
@@ -284,7 +284,7 @@ export default function RecipeChecklistScreen({
               <button
                 type="button"
                 onClick={() => setShowAddDrawer((prev) => !prev)}
-                className="min-h-[42px] px-3.5 py-2 rounded-xl bg-[#319447] text-white text-xs font-bold inline-flex items-center gap-1 cursor-pointer whitespace-nowrap"
+                className="min-h-[42px] px-3.5 py-2 rounded-xl bg-[#0074CC] text-white text-xs font-bold inline-flex items-center gap-1 cursor-pointer whitespace-nowrap"
               >
                 <Plus className="w-4 h-4" />
                 <span>상품 추가</span>
@@ -298,7 +298,7 @@ export default function RecipeChecklistScreen({
                   value={addSearch}
                   onChange={(e) => setAddSearch(e.target.value)}
                   placeholder="GS25 샘플 상품명 검색..."
-                  className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-[#DDD2BE] bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#319447]"
+                  className="w-full min-h-[42px] px-3 py-2 rounded-xl border border-[#DDD2BE] bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#0074CC]"
                 />
                 <div className="max-h-52 overflow-y-auto space-y-1.5">
                   {availableToAdd.map((p) => (
@@ -306,7 +306,7 @@ export default function RecipeChecklistScreen({
                       key={p.productId}
                       type="button"
                       onClick={() => handleAddProduct(p)}
-                      className="w-full text-left px-3 py-2.5 rounded-xl bg-white border border-[#EAE0CC] hover:border-[#319447] flex items-center justify-between gap-2 text-xs cursor-pointer"
+                      className="w-full text-left px-3 py-2.5 rounded-xl bg-white border border-[#EAE0CC] hover:border-[#0074CC] flex items-center justify-between gap-2 text-xs cursor-pointer"
                     >
                       <div className="flex items-center gap-2.5 min-w-0">
                         <img
@@ -323,7 +323,7 @@ export default function RecipeChecklistScreen({
                           </p>
                         </div>
                       </div>
-                      <span className="font-num font-bold text-[#319447] shrink-0">
+                      <span className="font-num font-bold text-[#0074CC] shrink-0">
                         {p.regularPrice === null ? '가격 확인 필요' : formatKRW(p.regularPrice)}
                       </span>
                     </button>
@@ -356,7 +356,7 @@ export default function RecipeChecklistScreen({
                         className="flex items-start gap-2.5 text-left min-w-0 flex-1 cursor-pointer"
                       >
                         {entry.checked ? (
-                          <CheckSquare className="w-5 h-5 text-[#319447] shrink-0 mt-2.5" />
+                          <CheckSquare className="w-5 h-5 text-[#0074CC] shrink-0 mt-2.5" />
                         ) : (
                           <Square className="w-5 h-5 text-[#9A9080] shrink-0 mt-2.5" />
                         )}
@@ -511,7 +511,7 @@ export default function RecipeChecklistScreen({
                 <span className="font-semibold text-[#5C5549]">남은 잔액</span>
                 <span
                   className={`font-num text-base font-extrabold ${
-                    summary.isOverBudget ? 'text-red-600' : 'text-[#319447]'
+                    summary.isOverBudget ? 'text-red-600' : 'text-[#0074CC]'
                   }`}
                 >
                   {summary.isOverBudget
@@ -535,7 +535,7 @@ export default function RecipeChecklistScreen({
               <Flame className="w-5 h-5 text-[#F49A24]" />
               <h2 className="text-lg font-bold text-[#252525]">3분 초간단 조리 영상</h2>
             </div>
-            <span className="inline-flex items-center gap-1 text-xs font-bold text-[#319447]">
+            <span className="inline-flex items-center gap-1 text-xs font-bold text-[#0074CC]">
               <Clock className="w-3.5 h-3.5" /> 총 약 {combo.estimatedCookingMinutes}분
             </span>
           </div>
